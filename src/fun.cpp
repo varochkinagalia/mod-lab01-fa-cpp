@@ -27,7 +27,7 @@ unsigned int faStr1(const char *str) {
 }
 
 unsigned int faStr2(const char *str) {
-    bool first = true;//первая буква
+    bool first = true;
     bool correct = false;
     bool second = false;
     int count = 0;
@@ -59,7 +59,7 @@ unsigned int faStr2(const char *str) {
     
 }
 
-/*unsigned int faStr3(const char *str) {
+unsigned int faStr3(const char *str) {
     bool inWord = false;
     int count = 0;
     int len = 0;
@@ -68,9 +68,9 @@ unsigned int faStr2(const char *str) {
         if (str[i] != ' ' && inWord == false) {
             if (inWord == false) {
                 inWord = true;
-                count++;
+                count+=1;
             }
-            len++;
+            len+=1;
         }
         else if (str[i] == ' ' && inWord == true) {
             inWord = false;
@@ -88,6 +88,6 @@ unsigned int faStr2(const char *str) {
         else {
             return static_cast<int>(ans);
         }
-   } 
+    } 
 }
-*/
+
