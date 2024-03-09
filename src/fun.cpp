@@ -10,16 +10,17 @@ unsigned int faStr1(const char *str) {
     while (str[i] != '\0') {
         if (str[i] != ' ') {
             inWord = true;
-        }
-        if (str[i] >= '0' && str[i] <= '9') {
-            cifra = true;
-        }
-        if (str[i] == ' ' && inWord == true) {
-            if (cifra ==  false) {
-                count++;
+        
+            if (str[i] >= '0' && str[i] <= '9') {
+                cifra = true;
             }
-            inWord = false;
-            cifra = false;
+            else if (str[i] == ' ' && inWord == true) {
+                if (cifra ==  false) {
+                    count++;
+                }
+                inWord = false;
+                cifra = false;
+            }
         }
         i++; 
     }
