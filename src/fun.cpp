@@ -1,12 +1,13 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
+#include "math.h"
 
 unsigned int faStr1(const char *str) {
     bool inWord = false;
     bool cifra = false;
     int count = 0;
     int i = 0;
-    while (str[i]) {
+    while (str[i] != '\0') {
         if (str[i] != ' ') {
             inWord = true;
         }
@@ -31,7 +32,7 @@ unsigned int faStr2(const char *str) {
     bool second = false;
     int count = 0;
     int i = 0;
-    while (str[i]) {
+    while (str[i] != '\0') {
         if (str[i] >= 'A' && str[i] <= 'Z' && first == true) {
             correct = true;
             first = false;
@@ -63,7 +64,7 @@ unsigned int faStr3(const char *str) {
     int count = 0;
     int len = 0;
     int i = 0;
-    while (str[i]) {
+    while (str[i] != '\0') {
         if (str[i] != ' ' && inWord == false) {
             inWord = true;
             count++;
