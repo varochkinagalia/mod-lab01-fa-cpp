@@ -26,7 +26,7 @@ unsigned int faStr1(const char *str) {
     return count;
 }
 
-unsigned int faStr2(const char *str) {
+/*unsigned int faStr2(const char *str) {
     bool first = true;//первая буква
     bool correct = false;
     bool second = false;
@@ -90,3 +90,4 @@ unsigned int faStr3(const char *str) {
         }
    } 
 }
+*/
