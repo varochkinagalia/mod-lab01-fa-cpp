@@ -10,7 +10,6 @@ unsigned int faStr1(const char *str) {
     while (str[i] != '\0') {
         if (str[i] != ' ') {
             inWord = true;
-        
             if (str[i] >= '0' && str[i] <= '9') {
                 cifra = true;
             }
@@ -70,28 +69,24 @@ unsigned int faStr3(const char *str) {
             inWord = true;
             count++;
         }
-        if (str[i] != ' ') {
+        else if (str[i] != ' ') {
             len++;
         }
-        if (str[i] == ' ' && inWord == true) {
+        else if (str[i] == ' ' && inWord == true) {
             inWord = false;
         }
         i++;
     }
-    float res = len / (float)count;
-    
-    
+    float ans = static_cast<float>(len) / count;
     if (count == 0) {
         return 0;
     }
-    
-    else  {
-        if (res -  (int)res >= 0.5) {
-            return (int)res+1;
+    else {
+        if ((ans - static_cast<int>(ans)) >= 0.5) {
+            return static_cast<int>(ans) + 1;
         }
         else {
-            return (res);
+            return static_cast<int>(ans);
         }
-    }
-    
+   } 
 }
