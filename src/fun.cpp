@@ -33,25 +33,25 @@ unsigned int faStr2(const char *str) {
     int count = 0;
     int i = 0;
     while (str[i] != '\0') {
-        if (str[i] >= 'A' && str[i] <= 'Z' && first == true) {
-            correct = true;
-            first = false;
-        }
-        else if (str[i] >= 'a' && str[i] <= 'z') {
-            first = false;
-            second = true;
-        }
-        else if (str[i] != ' ') {
+        if (str[i] != ' ')
+        {
             correct = false;
-        }
-        else {
-            if (correct == true && second == true) {
-                count++;
+            if (str[i] >= 'A' && str[i] <= 'Z' && first == true) {
+                correct = true;
+                first = false;
             }
-            first = true;
-
-            correct = false;
-            second = false;
+            else if (str[i] >= 'a' && str[i] <= 'z') {
+                first = false;
+                second = true;
+            }
+            else {
+                if (correct == true && second == true) {
+                    count++;
+                }
+                first = true;
+                correct = false;
+                second = false;
+            }
         }
         i++;
     }
@@ -66,10 +66,10 @@ unsigned int faStr3(const char *str) {
     int i = 0;
     while (str[i] != '\0') {
         if (str[i] != ' ' && inWord == false) {
-            inWord = true;
-            count++;
-        }
-        else if (str[i] != ' ') {
+            if (inWord == false) {
+                inWord = true;
+                count++;
+            }
             len++;
         }
         else if (str[i] == ' ' && inWord == true) {
