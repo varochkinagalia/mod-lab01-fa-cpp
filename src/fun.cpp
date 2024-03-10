@@ -22,7 +22,7 @@ unsigned int faStr1(const char *str) {
             inWord = false;
             cifra = false;
         }
-        i++; 
+        i++;
     }
     return count;
 }
@@ -34,25 +34,20 @@ unsigned int faStr2(const char *str) {
     int count = 0;
     int i = 0;
     while (str[i] != '\0') {
-        if (str[i] >= 'A' && str[i] <= 'Z' && first == true) {
+        if (str[i] >= 'A' && str[i] <= 'Z' && first == true)
             correct = true;
             first = false;
-        }
-        else if (str[i] >= 'a' && str[i] <= 'z') {
+        else if (str[i] >= 'a' && str[i] <= 'z')
             first = false;
             second = true;
-        }
-        else if (str[i] != ' ') {
+        else if (str[i] != ' ')
             correct = false;
-        }
-        else if (str[i] == ' ') {
-            if (correct == true && second == true) {
+        else if (str[i] == ' ')
+            if (correct == true && second == true)
                 count++;
-            }
             first = true;
             correct = false;
             second = false;
-        }
         i++;
     }
     return count;
@@ -76,10 +71,8 @@ unsigned int faStr3(const char *str) {
         }
         i++;
     }
-    if (count == 0) {
+    if (count == 0)
         return 0;
-    }
-    else {
+    else
         return std::round(len / count);
-    }
 }
