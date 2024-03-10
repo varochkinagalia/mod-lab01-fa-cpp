@@ -35,19 +35,29 @@ unsigned int faStr2(const char *str) {
     int i = 0;
     while (str[i] != '\0') {
         if (str[i] >= 'A' && str[i] <= 'Z' && first == true)
+        {
             correct = true;
             first = false;
+        }
         else if (str[i] >= 'a' && str[i] <= 'z')
+        {
             first = false;
             second = true;
+        }
         else if (str[i] != ' ')
+        {
             correct = false;
+        }
         else if (str[i] == ' ')
+        {
             if (correct == true && second == true)
+            {
                 count++;
+            }
             first = true;
             correct = false;
             second = false;
+        }
         i++;
     }
     return count;
@@ -72,7 +82,11 @@ unsigned int faStr3(const char *str) {
         i++;
     }
     if (count == 0)
+    {
         return 0;
+    }
     else
+    {
         return std::round(len / count);
+    }
 }
