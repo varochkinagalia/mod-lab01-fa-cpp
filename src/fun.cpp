@@ -37,15 +37,12 @@ unsigned int faStr2(const char *str) {
         if (str[i] >= 'A' && str[i] <= 'Z' && first == true) {
             correct = true;
             first = false;
-        } 
-        else if (str[i] >= 'a' && str[i] <= 'z') {
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
             first = false;
             second = true;
-        }
-        else if (str[i] != ' ') {
+        } else if (str[i] != ' ') {
             correct = false;
-        }
-        else if (str[i] == ' ') {
+        } else if (str[i] == ' ') {
             if (correct == true && second == true) {
                 count++;
             }
